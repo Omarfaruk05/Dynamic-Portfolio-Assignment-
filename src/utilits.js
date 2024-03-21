@@ -201,7 +201,7 @@ export const portfolioHover = () => {
     element.addEventListener("mousemove", () => {
       let title = element.getAttribute("data-title"),
         category = element.getAttribute("data-category");
-      if (title) {
+      if (!title) {
         dizme_tm_portfolio_titles.classList.add("visible");
         dizme_tm_portfolio_titles.innerHTML =
           title + '<span class="work__cat">' + category + "</span>";

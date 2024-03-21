@@ -1056,7 +1056,11 @@ h6 {
 }
 .dizme_tm_portfolio .portfolio_list .inner img {
   min-width: 100%;
-  opacity: 0;
+  opacity: 100;
+}
+.dizme_tm_portfolio .portfolio_list .inner img:hover {
+ width: 400px;
+  opacity: 100;
 }
 .dizme_tm_portfolio .portfolio_list .main {
   position: absolute;

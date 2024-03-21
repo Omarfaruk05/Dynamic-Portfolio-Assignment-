@@ -11,8 +11,16 @@ SwiperCore.use([Pagination, Navigation, EffectFade, Autoplay]);
 
 const Testimonial = () => {
   const [data, setData] = useState([]);
-  useEffect(async () => {
-    setData(await fatchData("/static/testimonial.json"));
+  useEffect(() => {
+    async function fetchData() {
+      const res = await fetch(
+        "https://portfolio-backend-30mp.onrender.com/api/v1/get/user/65b3a22c01d900e96c4219ae"
+      );
+      const data = await res.json();
+      setData(data?.user);
+    }
+    fetchData();
+    // setData(await fatchData("/static/testimonial.json"));
   }, []);
   const props = {
     slidesPerView: 1,
@@ -38,8 +46,8 @@ const Testimonial = () => {
           <div className="total">
             <div className="in">
               <Swiper {...props} className="">
-                {data &&
-                  data.map((data, i) => (
+                {data?.testimonials &&
+                  data?.testimonials?.map((data, i) => (
                     <SwiperSlide key={i}>
                       <div className="icon">
                         <svg
@@ -63,15 +71,22 @@ const Testimonial = () => {
                         </svg>
                       </div>
                       <div className="text">
-                        <p>{data.details}</p>
+                        <p>
+                          {data?.review}
+                          {data?.image?.url}
+                        </p>
                       </div>
                       <div className="short">
                         <div className="image">
-                          <div className="main" data-img-url={data.img} />
+                          <div className="main" />
+                          <img
+                            style={{ borderRadius: "50%" }}
+                            src={data?.image?.url}
+                          />
                         </div>
                         <div className="detail">
-                          <h3>{data.name}</h3>
-                          <span>{data.profession}</span>
+                          <h3>{data?.name}</h3>
+                          <span>{data?.position}</span>
                         </div>
                       </div>
                     </SwiperSlide>
