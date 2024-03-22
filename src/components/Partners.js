@@ -1,3 +1,5 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable @next/next/no-img-element */
 import { useEffect, useState } from "react";
 import { fatchData } from "../utilits";
 const Partners = ({ dark }) => {
@@ -24,7 +26,7 @@ const Partners = ({ dark }) => {
                         src={img.logo && img.logo[dark ? "dark" : "light"]}
                         alt="image"
                       />
-                      <a className="dizme_tm_full_link" a="" href={img.link} />
+                      <a className="dizme_tm_full_link" href={img.link} />
                     </div>
                   </li>
                 ))}

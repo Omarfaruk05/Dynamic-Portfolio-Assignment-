@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { useEffect, useState } from "react";
 import SwiperCore, {
   Autoplay,
@@ -82,6 +83,7 @@ const Testimonial = () => {
                           <img
                             style={{ borderRadius: "50%" }}
                             src={data?.image?.url}
+                            alt="x"
                           />
                         </div>
                         <div className="detail">

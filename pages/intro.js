@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import Head from "next/head";
 import { Fragment } from "react";
 import Cursor from "../src/layout/Cursor";

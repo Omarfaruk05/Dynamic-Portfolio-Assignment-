@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React, { Fragment, useEffect, useState } from "react";
 import useClickOutside from "../../useClickOutside";
 
@@ -26,7 +27,7 @@ const ImgViews = ({ close, src }) => {
               >
                 ×
               </button> */}
-              <img className="mfp-img" src={src} />
+              <img className="mfp-img" src={src} alt="x" />
             </div>
           </div>
           <div className="mfp-preloader">Loading...</div>

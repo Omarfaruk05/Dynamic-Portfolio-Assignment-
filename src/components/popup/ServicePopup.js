@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 const ServicePopup = ({ data, open, close }) => {
   return (
     <div className={`dizme_tm_modalbox ${open ? "opened" : ""}`}>
